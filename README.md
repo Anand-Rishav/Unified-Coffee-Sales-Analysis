@@ -52,7 +52,7 @@ The analysis covered several key areas:
 ## Repository Structure
 
 - `coffee.csv`: The dataset used for the analysis.
-- `coffee_vending_machine_analysis.ipynb`: Jupyter Notebook containing all code for data loading, preprocessing, EDA, customer analysis, and sales forecasting.
+- `Coffee Sales Notebook.ipynb`: Jupyter Notebook containing all code for data loading, preprocessing, EDA, customer analysis, and sales forecasting.
 - `README.md`: Project overview and documentation.
 
 ---
