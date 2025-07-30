@@ -1,58 +1,127 @@
-# Coffee Vending Machine Sales Analysis
+# Unified Coffee Sales Analysis
 
-## Project Overview
+## Overview
 
-This project analyzes sales data from a coffee vending machine to uncover key trends, understand customer behavior, and forecast future sales. By leveraging data analysis and time series modeling, we aim to provide actionable insights for optimizing inventory, marketing strategies, and overall business decisions.
+Unified Coffee Sales Analysis is a comprehensive project designed to analyze transactional data from a coffee vending machine. The primary goals are to uncover sales trends, understand customer behavior, and generate forecasts to optimize inventory and marketing strategies. By leveraging modern Python data science libraries and statistical modeling, this repository delivers actionable insights for business decision-making in the beverage sector.
+
+---
 
 ## Dataset
 
-The analysis is based on the `coffee.csv` dataset, which contains detailed records of each transaction, including:
-- **date**: Date of the transaction.
-- **datetime**: Timestamp of the transaction.
-- **cash_type**: Payment method (card or cash).
-- **card**: Anonymized card identifier (for card payments).
-- **money**: Transaction amount.
-- **coffee_name**: Type of coffee purchased.
+The analysis is centered on the `coffee.csv` dataset, which records every transaction with the following fields:
+- **date:** Date of transaction
+- **datetime:** Exact timestamp for each purchase
+- **cash_type:** Payment method (card or cash)
+- **card:** Anonymized card identifier (used for card payments)
+- **money:** Transaction amount
+- **coffee_name:** Type of coffee purchased
 
-## Analysis and Findings
+---
 
-The analysis covered several key areas:
+## Analysis Workflow
 
-### Data Loading and Preprocessing
-- Loaded and inspected the raw data.
-- Converted date and datetime columns to appropriate formats.
-- Handled missing values in the `card` column by identifying them as cash payments.
-- Extracted time-based features like hour and day of the week.
+The project follows a robust, step-by-step approach:
 
-### Exploratory Data Analysis (EDA)
-- **Most Popular Products:** Latte and Hot Chocolate are the top-selling items.
-- **Revenue Distribution:** Latte and Hot Chocolate also contribute the most to revenue.
-- **Peak Sales Hours:** Sales peak during lunchtime (12 PM - 2 PM) and gradually decrease throughout the day.
-- **Sales by Day of the Week:** Weekdays, especially Friday, have significantly higher sales than weekends.
-- **Payment Method Preference:** Card payments are the dominant transaction type.
-- **Daily Sales Trend:** Daily sales show a clear weekly seasonality.
+### 1. Data Loading & Preprocessing
 
-### Customer Behavior Analysis
-- Identified the top customers by purchase frequency and total spending.
-- Analyzed individual customer preferences (e.g., the favorite coffee of the most frequent buyer).
+- **Inspection:** Read and examine raw data for integrity.
+- **Type Conversion:** Convert string-based dates and times to datetime objects.
+- **Missing Value Handling:** Address missing values, especially in the `card` column, to clarify cash/card payments.
+- **Feature Engineering:** Extract relevant features such as hour of day, day of week, and aggregate customer statistics.
 
-### Sales Forecasting
-- Utilized the Prophet library to model daily sales.
-- The model captured the overall trend and weekly seasonality.
-- Provided forecasts for the next 30 days, including predictions for the next day, week, and month.
+### 2. Exploratory Data Analysis (EDA)
+
+- **Popular Products:** Identify best-selling items (Latte and Hot Chocolate lead in both sales and revenue).
+- **Revenue Analysis:** Reveal which products generate the most income.
+- **Temporal Patterns:** Pinpoint peak sales hours (usually lunch, 12–2 PM) and examine sales across weekdays and weekends.
+- **Payment Method Trends:** Highlight the dominance of card payments over cash.
+- **Seasonality:** Analyze weekly cyclic trends and weekend dips in sales.
+
+### 3. Customer Behavior Analysis
+
+- **Top Customers:** Rank buyers by purchase frequency and spending.
+- **Preference Mining:** Uncover individual coffee preferences and customer loyalty patterns.
+
+### 4. Time Series Forecasting
+
+- **Modeling:** Use the Prophet library to forecast daily sales.
+- **Trend Detection:** Capture underlying trends and weekly seasonality.
+- **Prediction:** Provide actionable forecasts for the next day, week, and month to support planning and inventory decisions.
+
+---
+
+## Data Visualization & Analysis Techniques
+
+- **Data Cleaning:** Remove inconsistencies and prepare data for analysis.
+- **GroupBy and Aggregation:** Summarize sales by product, payment method, hour, weekday, and customer.
+- **Bar Charts & Time Series Plots:** Visualize product popularity, sales trends, and seasonality.
+- **Heatmaps:** Reveal temporal patterns in sales across hours and days.
+- **Statistical Summaries:** Provide descriptive statistics for revenue and transaction counts.
+
+---
+
+## Python Libraries Used
+
+Typical libraries (based on standard data analysis workflows and the use of Prophet):
+- **pandas:** For data manipulation and aggregation
+- **numpy:** For numerical operations
+- **matplotlib / seaborn:** For plotting and data visualization
+- **Prophet:** For time series forecasting
+- **datetime:** For handling date and time features
+
+---
 
 ## Key Insights
 
-- Latte and Hot Chocolate are the primary drivers of both sales volume and revenue.
-- Targeting promotions or ensuring sufficient stock during weekday lunch hours is crucial.
-- Focusing on card payment options aligns with customer preferences.
-- Strong weekly seasonality indicates predictable dips in sales on weekends.
-- The forecasting model is a valuable tool for planning and inventory management.
+- **Product Focus:** Latte and Hot Chocolate drive sales volume and revenue.
+- **Sales Timing:** Weekday lunch hours are critical for promotions and inventory.
+- **Customer Preference:** Card payments dominate, suggesting the need for fast, digital checkout.
+- **Seasonal Patterns:** Predictable weekly cycles and weekend dips inform staffing and stocking.
+- **Forecasting Value:** Data-driven forecasts aid in proactive inventory management and business planning.
+
+---
 
 ## Repository Structure
 
-- `coffee.csv`: The dataset used for the analysis.
-- `Coffee Sales Notebook.ipynb`: Jupyter Notebook containing all code for data loading, preprocessing, EDA, customer analysis, and sales forecasting.
-- `README.md`: Project overview and documentation.
+- `coffee.csv`: Core transaction dataset
+- `Coffee Sales Notebook.ipynb`: Jupyter notebook containing all scripts for data loading, preprocessing, EDA, customer segmentation, and forecasting
+- `README.md`: Comprehensive project documentation
+
+---
+
+## Getting Started
+
+To reproduce the analysis or modify it for your own data:
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/Anand-Rishav/Unified-Coffee-Sales-Analysis.git
+   ```
+
+2. **Set Up Python Environment:**  
+   Create and activate a virtual environment (recommended).
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install Required Packages:**  
+   Typical installations include:
+   ```bash
+   pip install pandas numpy matplotlib seaborn prophet
+   ```
+
+4. **Run the Notebook:**  
+   Use Jupyter or VS Code to open and execute `Coffee Sales Notebook.ipynb`.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+## Contact
+
+For questions, feedback, or contributions, please open an issue or reach out via GitHub.
 
 ---
